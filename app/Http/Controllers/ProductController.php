@@ -6,14 +6,13 @@ use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
-    public function show($id = null)
+    public function showDetail($id)
     {
-        if (!$id == null) {
-            echo 'Fiche du produit ' . $id;
-            return view('product-detail', ['id' => $id]);
-        } else {
-            echo 'Liste des produits';
-            return view('product-list');
-        }
+        return view('product-detail', ['id' => $id]);
+    }
+
+    public function showList()
+    {
+        return view('product-list');
     }
 }

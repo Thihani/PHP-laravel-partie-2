@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\View;
 
 Route::get('/', [HomeController::class, 'show']);
 
-Route::get('/product/{id?}', [ProductController::class, 'show']);
+Route::get('/product', [ProductController::class, 'showList']);
+
+Route::get('/product/{id}', [ProductController::class, 'showDetail']);
 
 Route::get('/cart', [CartController::class, 'show']);
