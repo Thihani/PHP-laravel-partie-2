@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
@@ -16,18 +19,8 @@ use Illuminate\Support\Facades\View;
 |
 */
 
-Route::get('/', function () {
-    return 'home_page';
-});
+Route::get('/', [HomeController::class, 'show']);
 
-Route::get('/product', function () {
-    return 'product';
-});
+Route::get('/product/{id?}', [ProductController::class, 'show']);
 
-Route::get('/product/{id}', function ($id) {
-    return 'Fiche produit ' . $id;
-});
-
-Route::get('/cart', function () {
-    return 'Panier';
-});
+Route::get('/cart', [CartController::class, 'show']);
