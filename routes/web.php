@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +17,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'home_page';
 });
 
-Route::get('/etape1', function () {
-    return view('etape1');
+Route::get('/product', function () {
+    return 'product';
+});
+
+Route::get('/product/{id}', function ($id) {
+    return 'Fiche produit ' . $id;
+});
+
+Route::get('/cart', function () {
+    return 'Panier';
 });
