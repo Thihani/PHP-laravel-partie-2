@@ -10,6 +10,7 @@ class HomeController extends Controller
 
     public function show()
     {
-        return 'Home page';
+        echo 'Home page';
+        return view('homepage');
     }
 }

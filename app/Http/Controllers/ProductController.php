@@ -9,9 +9,11 @@ class ProductController extends Controller
     public function show($id = null)
     {
         if (!$id == null) {
-            return 'Fiche du produit ' . $id;
+            echo 'Fiche du produit ' . $id;
+            return view('product-detail', ['id' => $id]);
         } else {
-            return 'Liste des produits';
+            echo 'Liste des produits';
+            return view('product-list');
         }
     }
 }
