@@ -43,14 +43,13 @@
                 </ul>
             </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="btn" href="/product">Catalogue</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a class="btn" href="/cart">
+                <img class="img-button" src={{ asset('images/shopping-cart-1.svg') }} width="30" height="30" alt="">
+                Panier
+            </a>
           </li>
         </ul>
 

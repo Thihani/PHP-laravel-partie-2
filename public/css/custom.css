@@ -13,9 +13,40 @@
     font-weight: normal;
     font-size: 18px;
     color: #A9AD53;
-
 }
 
 .nav-link:hover{
     color: #D0D650;
+}
+
+.button-navbar-toggler{
+    color: #A9AD53;
+}
+
+.navbar-toggler-icon{
+    fill: #A9AD53;
+}
+
+.navbar-toggler{
+    color: #A9AD53;
+}
+
+.img-button{
+    fill: #A9AD53;
+}
+
+.btn{
+    border: 2px solid #C3C76B;
+    border-radius: 10px;
+    margin: 10px;
+    font-family: Abel;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #A9AD53;
+}
+
+.btn:hover{
+    color: #D0D650;
+    border: 2px solid #D0D650;
 }
