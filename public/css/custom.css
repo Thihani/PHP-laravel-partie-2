@@ -92,5 +92,56 @@ button{
 /*-----------------------------end of footer------------------------------*/
 /*-----------------------------page product list------------------------------*/
 #photo-anne-sophie{
-    width: 1900px;
+    width: 100%;
+}
+.photoproduct{
+    width: 400px;
+    height: auto;
+}
+.body-productlist{
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-left: 200px;
+    padding-right: 200px;
+    background-color: rgba(221, 224, 189, 1) ;
+}
+.product-col{
+    margin-top: 20px;
+}
+.product{
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(169, 173, 83, 1);
+    font-size: 18px;
+    font-family: Abel;
+    text-align: center;
+    border-radius: 10px ;
+}
+/*-----------------------------page product detail------------------------------*/
+.body-productdetail{
+    background-color: rgba(221, 224, 189, 1) ;
+    height: 900px;
+    padding-top: 5%;
+
+}
+.content-productdetail{
+    background-color: rgba(255, 255, 255, 1);
+    height: 600px;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 10px ;
+    color: rgba(69, 54, 67, 1);
+    font-family: Playfair;
+    text-align: center;
+}
+.productinfo{
+    color: rgba(169, 173, 83, 1);
+    font-size: 25px;
+    font-family: Abel;
+    padding: 5%;
+}
+.productinfo p{
+    color: rgba(69, 54, 67, 1);
+    font-size: 18px;
+    text-align: justify;
 }
