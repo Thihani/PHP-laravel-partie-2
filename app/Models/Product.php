@@ -9,7 +9,3 @@ class Product extends Model
 {
     protected $connection='mysql';
 }
-
-/*foreach (Product::all() as $product) {
-    echo $product->name;
-}*/
