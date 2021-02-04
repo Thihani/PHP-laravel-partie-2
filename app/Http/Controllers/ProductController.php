@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use DB;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -16,8 +17,12 @@ class ProductController extends Controller
 
     public function showList()
     {
-        $productlist = DB::select('select name, price from products');
-        return view('product-list', ['productlist' => $productlist]);
+        //$productlist = DB::select('select name, price from products');
+        //return view('product-list', ['productlist' => $productlist]);
+        $productlist=Product::all();
+        return view('product-list',['productlist' => $product]);
+
+
     }
 }
 
