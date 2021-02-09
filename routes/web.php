@@ -28,3 +28,12 @@ Route::get('/product/{id}', [ProductController::class, 'showDetail']);
 Route::get('/cart', [CartController::class, 'show']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/backoffice',[\App\Http\Controllers\BackofficeController::class,'index']);
+Route::post('/backoffice',[\App\Http\Controllers\BackofficeController::class,'add'])->name('backoffice-add');
+
+Route::get('/backoffice/update/{id}',[\App\Http\Controllers\BackofficeController::class,'update']);
+Route::put('backoffice/update/{id}', [\App\Http\Controllers\BackofficeController::class,'update'])->name('backoffice-update');
+
+Route::get('/backoffice/delete',[\App\Http\Controllers\BackofficeController::class,'delete'])->name('backoffice-delete');
+Route::post('/backoffice/delete',[\App\Http\Controllers\BackofficeController::class,'delete'])->name('backoffice-delete');

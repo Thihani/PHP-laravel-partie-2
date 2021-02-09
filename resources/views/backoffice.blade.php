@@ -1,7 +1,16 @@
-@extends('layouts.layout')
-
-@section('title', 'Home')
+@extends('layouts.backoffice-layout')
 
 @section('content')
-    <h1>Contenu de la Home Page</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                @include('includes.formulaire')
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+
+
 @endsection
