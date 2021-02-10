@@ -12,7 +12,12 @@ class ProductController extends Controller
     public function showDetail($id)
     {
         $product = Product::find($id);
-        return view('product-detail', ['product' => $product]);
+        if($product===null)
+        {
+            abort(404);
+        }else{
+            return view('product-detail', ['product' => $product]);
+        }
     }
 
     public function showList(Request $request)

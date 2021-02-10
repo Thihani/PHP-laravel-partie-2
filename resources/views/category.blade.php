@@ -5,7 +5,7 @@
 @section('content')
     @foreach($categories as $category)
         <p>{{$category->id}} - {{$category->name}}</p>
-            @foreach($category->product as $product)
+            @foreach($category->products as $product)
                 {{$product->name}} <br>
             @endforeach
         <hr>
