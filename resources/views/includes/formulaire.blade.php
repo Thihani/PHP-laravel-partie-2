@@ -1,16 +1,14 @@
 <h1>Ajouter</h1>
 <form action="{{route('backoffice-add')}}" method="post">
     {{ csrf_field() }}
-    <input style="width: 80%" type="number" class="form-control"  name="id" placeholder="Product id">
+   <input style="width: 30%" type="text" class="form-control"  name="name" placeholder="Product name">
     <br>
-    <input style="width: 80%" type="text" class="form-control"  name="name" placeholder="Product name">
+    <input style="width: 30%" type="number" class="form-control"  name="price" placeholder="Price">
     <br>
-    <input style="width: 80%" type="number" class="form-control"  name="price" placeholder="Price">
-    <br>
-    <textarea style="width: 80%" class="form-control" rows="3" name="description" placeholder="Description"></textarea>
+    <textarea style="width: 30%" class="form-control" rows="3" name="description" placeholder="Description"></textarea>
     <br>
     <label>Category</label>
-    <select name="category" style="width: 80%" class="form-select" aria-label="Default select example">
+    <select name="category" style="width: 30%" class="form-select" aria-label="Default select example">
         <option value=""></option>
         <option value="7">7</option>
         <option value="8">8</option>

@@ -26,10 +26,9 @@
                     <img class="photoproduct" src={{ asset('images/image.png') }} alt="photo of product">
                     @if ($product->price/100 <= 20)
                         <p class="bestprice">Best price <br></p>
-                        <p>{{ $product->name }} - €{{ $product->price/100 }}</p>
-                    @else
-                        <p>{{ $product->name }} - €{{ $product->price/100 }}</p>
                     @endif
+                    <p>{{ $product->name }} - €{{ $product->price/100 }}</p>
+                    <a >                    </a>
                 </div>
             </div>
         @endforeach

@@ -57,13 +57,18 @@ class BackofficeController extends Controller
         return view('backoffice-update', ['product' => $product,'id'=>$id]);
     }
 
-    public function delete(Request $request)
+    public function delete(Request $request, $id)
     {
+        $product = Product::find($id);
+        $data = [
+            'id'=>$id,
+            'product'=>$product
+        ];
         if($request->has('delete'))
         {
-            $product = Product::find($request->id) ->delete();
+            $product = Product::find($id) ->delete();
         }
-        return view('backoffice-delete');
+        return view('backoffice-delete',$data);
     }
 
 }
