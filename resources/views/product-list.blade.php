@@ -27,8 +27,8 @@
                     @if ($product->price/100 <= 20)
                         <p class="bestprice">Best price <br></p>
                     @endif
-                    <p>{{ $product->name }} - €{{ $product->price/100 }}</p>
-                    <a >                    </a>
+                    <p>{{ $product->name }} - €{{ $product->price/100 }} -{{$product->category->name}}</p>
+
                 </div>
             </div>
         @endforeach

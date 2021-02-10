@@ -4,9 +4,6 @@
 <form action="{{route('backoffice-update',['id'=>$id])}}" method="post">
     @method('PUT')
     {{ csrf_field() }}
-    <label><h3>Product id</h3></label>
-    <input style="width: 27%" type="number" class="form-control"  name="id" value="{{$product->id}}">
-    <br>
     <label><h3>Product name</label></h3>
     <input style="width: 50%" type="text" class="form-control"  name="name" value="{{$product->name}}">
     <br>

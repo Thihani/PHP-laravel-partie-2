@@ -28,7 +28,7 @@ class ProductController extends Controller
                 return view('product-list', ['productlist' => $products]);
             }
         }else{
-            $products = Product::all();
+            $products = Product::with('category')->get();
             return view('product-list', ['productlist' => $products]);
 
         }

@@ -37,3 +37,5 @@ Route::put('backoffice/update/{id}', [\App\Http\Controllers\BackofficeController
 
 Route::get('/backoffice/delete/{id}',[\App\Http\Controllers\BackofficeController::class,'delete']);
 Route::delete('/backoffice/delete/{id}',[\App\Http\Controllers\BackofficeController::class,'delete'])->name('backoffice-delete');
+
+Route::get('category',[\App\Http\Controllers\CategoryController::class,'index']);
