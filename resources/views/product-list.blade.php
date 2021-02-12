@@ -23,12 +23,13 @@
         @foreach ($productlist as $product)
             <div class="col product-col">
                 <div class="product">
+                    <a href="{{route('product-detail',[$product->id])}}">
                     <img class="photoproduct" src={{ asset('images/image.png') }} alt="photo of product">
                     @if ($product->price/100 <= 20)
                         <p class="bestprice">Best price <br></p>
                     @endif
                     <p>{{ $product->name }} - €{{ $product->price/100 }} -{{$product->category->name}}</p>
-
+                    </a>
                 </div>
             </div>
         @endforeach

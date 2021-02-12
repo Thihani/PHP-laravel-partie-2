@@ -14,7 +14,7 @@ class BackofficeController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('backoffice', ['productlist' => $products]);
+        return view('backoffice.backoffice', ['productlist' => $products]);
     }
 
     public function add(Request $request)
@@ -33,7 +33,7 @@ class BackofficeController extends Controller
             $newproduct->category_id = $request->category;
             $newproduct->save();
         }
-        return view('backoffice');
+        return view('backoffice.backoffice');
     }
 
     public function update(Request $request, $id)
@@ -47,7 +47,7 @@ class BackofficeController extends Controller
             $product->category_id = $request->input('category');
             $product->save();
         }
-        return view('backoffice-update', ['product' => $product, 'id' => $id]);
+        return view('backoffice.backoffice-update', ['product' => $product, 'id' => $id]);
     }
 
     public function delete(Request $request, $id)
@@ -60,7 +60,7 @@ class BackofficeController extends Controller
         if ($request->has('delete')) {
             $product = Product::find($id)->delete();
         }
-        return view('backoffice-delete', $data);
+        return view('backoffice.backoffice-delete', $data);
     }
 
 }
