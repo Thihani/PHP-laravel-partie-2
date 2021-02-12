@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AddRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,11 @@ class BackofficeController extends Controller
     public function add(Request $request)
     {
         if ($request->has('add')) {
+            $validated = $request->validate([
+                    'name' => 'required',
+                    'price'=>'integer|min:0',
+                    'category'=>'integer|exists:categories,id'
+            ]);
             $newproduct = new Product;
             $newproduct->id = $request->id;
             $newproduct->name = $request->name;
@@ -33,12 +39,12 @@ class BackofficeController extends Controller
     public function update(Request $request, $id)
     {
         $product = Product::find($id);
-        if ($request->has('update')) {
-
-            $product->name = $request->name;
-            $product->price = $request->price;
-            $product->description = $request->description;
-            $product->category_id = $request->category;
+        if ($request->has('update'))
+        {
+            $product->name = $request->input('name');
+            $product->price = $request->input('price');
+            $product->description = $request->input('description');
+            $product->category_id = $request->input('category');
             $product->save();
         }
         return view('backoffice-update', ['product' => $product, 'id' => $id]);

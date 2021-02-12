@@ -1,6 +1,6 @@
 @extends('layouts.backoffice-layout')
 
 @section('content')
-                @include('includes.formulaire')
+    @include('includes.formulaire')
 
 @endsection

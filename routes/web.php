@@ -24,6 +24,7 @@ Route::get('/', [HomeController::class, 'show']);
 Route::get('/product', [ProductController::class, 'showList']);
 
 Route::get('/product/{id}', [ProductController::class, 'showDetail'])->name('product-detail');
+Route::post('/product/order/{id}', [ProductController::class, 'order'])->name('order');
 
 Route::get('/cart', [CartController::class, 'show']);
 
@@ -39,3 +40,5 @@ Route::get('/backoffice/delete/{id}',[\App\Http\Controllers\BackofficeController
 Route::delete('/backoffice/delete/{id}',[\App\Http\Controllers\BackofficeController::class,'delete'])->name('backoffice-delete');
 
 Route::get('category',[\App\Http\Controllers\CategoryController::class,'index']);
+
+

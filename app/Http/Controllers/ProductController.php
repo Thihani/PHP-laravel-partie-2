@@ -16,7 +16,7 @@ class ProductController extends Controller
         {
             abort(404);
         }else{
-            return view('product-detail', ['product' => $product]);
+            return view('product-detail', ['product' => $product,'id'=>$id]);
         }
     }
 
@@ -37,9 +37,20 @@ class ProductController extends Controller
             return view('product-list', ['productlist' => $products]);
 
         }
+    }
+    public function order(Request $request, $id)
+    {
+        $product = Product::find($id);
+        if ($request->has('order'))
+        {
+
+            $validated = $request->validate([
+                'quantity'=>'integer|min:1|max:'.$product->quantity,
+            ]);
+            return view('product-detail', ['product' => $product, 'id' => $id]);
+        }
 
     }
-
 
     /*public function sort(Request $request)
     {
