@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Resources\Product as ProductResource;
 
 class ProductController extends Controller
 {
@@ -15,7 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Product::all();
+        return ProductResource::collection(Product::with('category')->get());
+
     }
 
     /**
@@ -28,7 +30,7 @@ class ProductController extends Controller
     {
         if(Product::create($request->all()))
         {
-            return response()->json(['success'=> 'Product created successfully'],200);
+            return response()->json(['success'=> 'Product is created successfully'],200);
         };
     }
 
@@ -40,7 +42,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return $product;
+        return new ProductResource($product);
     }
 
     /**
@@ -50,13 +52,12 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $product)
+    public function update(Request $request, Product $product)
     {
-
         if($product->update($request->all()))
-            {
-                return response()->json(['success'=> 'Product updated successfully'],200);
-            };
+        {
+            return response()->json(['success'=> 'Product is updated successfully'],200);
+        };
     }
 
     /**
@@ -65,8 +66,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        if($product->delete())
+        {
+            return response()->json(['success'=> 'Product is deleted successfully'],200);
+        };
     }
 }
